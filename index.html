@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Just another non-sensical game. </title>
+
+    <link rel="stylesheet" href="modern-normalize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div id="door-0" data-id="0" class="door"><span class="label">0</span></div>
+        <div id="door-1" data-id="1" class="door"><span class="label">1</span></div>
+        <div id="door-2" data-id="2" class="door"><span class="label">2</span></div>
+    </main>
+
+    <div id="message"></div>
+
+    <div class="controls container">
+        <button type="button" class="hide" id="btnConfirmSelection"> CONFIRM SELECTION </button>
+        <!-- <button type="button" class="hide" id="btnOpenRandomDoor"> OPEN ONE NON SELECTED DOOR </button> -->
+        <button type="button" class="hide" id="btnSwitch"> YES </button>
+        <button type="button" class="hide" id="btnCheckWinner"> NO </button>
+        <button type="button" class="hide" id="btnReset"> PLAY AGAIN </button>
+    </div>
+
+    <div id="score">
+        <p>WIN: <span id="score-win">0</span></p>
+        <p>LOSE: <span id="score-lose">0</span></p>
+        <p>WIN RATE: <span id="win-rate">0%</span></p>
+        <p><small><a href="simulation.html">SIMULATE</a></small></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

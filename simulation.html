@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Simulation </title>
+
+    <link rel="stylesheet" href="modern-normalize.css">
+    <link rel="stylesheet" href="simulation.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">Monty Hall Simulation</h1>
+        
+        <label class="cb-container">Do you want to switch?
+            <input id="cbSwitch" type="checkbox">
+            <span class="checkmark"></span>
+        </label>
+
+        <div class="form-group">
+            <label for="numAttempts">How many tries?</label>
+            <input type="number" id="txtNumAttempts" min="1" max="1000000" value="100" />
+        </div>
+
+        <div class="controls">
+            <button id="btnSimulate">SIMULATE</button>
+            <button id="btnReset" class="invi" disabled>RESET</button>
+        </div>
+
+        <hr>
+
+        <div id="chart">
+            <p>Number of attempts: <span id="num-attempts">0</span></p>
+
+            <div class="bar">
+                    <div id="bar-win" class="bar-value">WIN</div>
+                    <div id="bar-lose" class="bar-value">LOSE</div>
+            </div>
+
+            <!-- <div class="bar">
+                <div class="bar-bar">
+                    <div id="bar-lose" class="bar-value">LOSE</div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+    <script src="simulation.js"></script>
+</body>
+
+</html>

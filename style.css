@@ -1,0 +1,94 @@
+main, .container {
+    max-width: 1200px;
+    margin: 30px auto 0 auto;
+    display: flex;
+    padding: 20px;
+}
+
+.door {
+    flex: auto;
+    margin: 15px;
+    height: 500px;
+    background-color: white;
+    border: 6px solid tomato;
+    text-align: center;
+    border-radius: 8px;
+    color: tomato;
+    transition: all 300ms;
+}
+
+.door:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.12), 0 2px 4px 0 rgba(0,0,0,.08);
+    transform: scale(1.05);
+}
+
+.door.selected {
+    background-color: tomato;
+    border: 6px solid tomato;
+    color: white;
+    transform: scale(1.05);
+}
+
+.door.open {
+    background-color: #c3c3c3;
+    border: 6px solid #c3c3c3;
+    color: white;
+    transform: scale(.95);
+}
+
+.door.show-prize {
+    background-color: gold;
+    border-color: gold;
+    color: white;
+    box-shadow: 0 15px 30px 0 rgba(0,0,0,.11), 0 5px 15px 0 rgba(0,0,0,.08);
+    transform: scale(1.1);
+}
+
+.door > span {
+    line-height: 500px;
+    font-size: 200px;
+    font-weight: bold;  
+}
+
+.controls {
+    padding: 10px;
+    display: flex;
+}
+
+button {
+    padding: 20px 30px;
+    background-color: #cc9af4;
+    border: 2px solid #cc9af4;
+    border-radius: 4px;
+    font-weight: bold;
+    margin: 3px;
+    flex: auto;
+}
+
+#message {
+    text-align: center;
+    padding: 40px 10px 20px 10px;
+    font-size: 60px;
+    color: #3f3f3f;
+    font-weight: bold;
+}
+
+.events-off {
+    pointer-events: none;
+}
+
+.hide {
+    display: none;
+}
+
+#score {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    font-size: 16px;
+}
+#score > p {
+    margin: 5px;
+    color: #333333;
+}
