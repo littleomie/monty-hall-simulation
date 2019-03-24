@@ -21,8 +21,8 @@ btnSimulate.addEventListener('click', () => {
     let numAttempts = parseInt(txtNumAttempts.value);
     let maxAttempts = numAttempts;
 
-    if (!DELAY){
-        while (numAttempts){
+    if (!DELAY) {
+        while (numAttempts) {
             numAttempts--;
             simulate(maxAttempts, isSwitch);
         }
@@ -33,10 +33,10 @@ btnSimulate.addEventListener('click', () => {
         // USE INTERVAL
         let interval = setInterval(() => {
             numAttempts--;
-            
+
             simulate(maxAttempts, isSwitch);
-    
-            if (!runSimulation || numAttempts <= 0){
+
+            if (!runSimulation || numAttempts <= 0) {
                 clearInterval(interval);
                 btnReset.disabled = false;
                 console.log('DONE');
@@ -82,18 +82,18 @@ function simulate(maxAttempts, isSwitch) {
 function updateWin(win, lose) {
     let max = win + lose;
     let perc = ((win / max) * 100).toFixed(2) + '%';
-    barWin.innerText = win + ' ('+perc+')';
+    barWin.innerText = win + ' (' + perc + ')';
     barWin.style.width = perc;
 }
 
 function updateLose(win, lose) {
     let max = win + lose;
     let perc = ((lose / max) * 100).toFixed(2) + '%';
-    barLose.innerText =  lose + ' ('+perc+')';
+    barLose.innerText = lose + ' (' + perc + ')';
     barLose.style.width = perc;
 }
 
-function reset(){
+function reset() {
     btnSimulate.disabled = false;
     barWin.style.width = '0';
     barLose.style.width = '0';

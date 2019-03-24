@@ -23,7 +23,7 @@ doors.forEach(door => {
         clearSelected();
         door.classList.add('selected');
         selectedDoor = parseInt(door.dataset.id);
-        console.log('SELECTED DOOR IS '+selectedDoor);
+        console.log('SELECTED DOOR IS ' + selectedDoor);
         message.innerText = 'Please Confirm Selection';
         btnConfirmSelection.classList.remove('hide');
     });
@@ -54,16 +54,16 @@ btnConfirm.addEventListener('click', () => {
     openRandomNotSelectedDoor();
 });
 
-function clearSelected(){
+function clearSelected() {
     doors.forEach(door => {
         door.classList.remove('selected');
-        door.classList.remove('open');        
+        door.classList.remove('open');
         var id = parseInt(door.dataset.id);
         door.querySelector('span').innerText = id;
     });
 }
 
-function openRandomNotSelectedDoor(){
+function openRandomNotSelectedDoor() {
     var toBeOpenedDoor = document.querySelector('.door:not(.selected):not(.has-prize)');
     message.innerText = 'Opening one door ...';
     setTimeout(() => {
@@ -76,32 +76,32 @@ function openRandomNotSelectedDoor(){
     }, TIMER);
 }
 
-function checkWinner(){
+function checkWinner() {
     message.innerText = 'Checking if you win or not ...';
 
     setTimeout(() => {
-        console.log('SELECTED: '+selectedDoor);
-        console.log('PRIZE: '+prizedDoor);
-        
-        if (selectedDoor === prizedDoor){
+        console.log('SELECTED: ' + selectedDoor);
+        console.log('PRIZE: ' + prizedDoor);
+
+        if (selectedDoor === prizedDoor) {
             message.innerText = 'Congratulations! You won!';
             win++;
         } else {
-            message.innerText = 'You Lose! Prize is at Door '+prizedDoor;
+            message.innerText = 'You Lose! Prize is at Door ' + prizedDoor;
             lose++;
         }
 
-        document.querySelector('#door-'+prizedDoor).classList.add('show-prize');
+        document.querySelector('#door-' + prizedDoor).classList.add('show-prize');
 
         btnReset.classList.remove('hide');
         updateScore();
     }, TIMER + 500);
 }
 
-function switchSelection(){
+function switchSelection() {
     console.log('SWITCHING ...');
-    console.log('PRIZE IS AT DOOR '+prizedDoor);
-    console.log('SELECTED: '+selectedDoor);
+    console.log('PRIZE IS AT DOOR ' + prizedDoor);
+    console.log('SELECTED: ' + selectedDoor);
     var selected = document.querySelector('.door.selected');
     var notOpenAndSelected = document.querySelector('.door:not(.selected):not(.open)');
 
@@ -112,20 +112,20 @@ function switchSelection(){
     notOpenAndSelected.classList.add('selected');
     selectedDoor = parseInt(notOpenAndSelected.dataset.id);
 
-    console.log('SWITCHED TO NEW SELECTED DOOR '+selectedDoor);
+    console.log('SWITCHED TO NEW SELECTED DOOR ' + selectedDoor);
 
     checkWinner();
 }
 
-function updateScore(){
+function updateScore() {
     scoreWin.innerText = win;
     scorelose.innerText = lose;
     winRate.innerText = ((win / (win + lose)) * 100).toFixed(2) + '%';
 }
 
-function start(){
+function start() {
     console.log('------------------------------\n');
-    doors.forEach(function(el){
+    doors.forEach(function (el) {
         el.className = 'door';
     });
 
@@ -137,8 +137,8 @@ function start(){
 
     // ADD CLASS .prize TO DOOR
     clearSelected();
-    console.log('PRIZE IS AT DOOR '+prizedDoor);
-    document.querySelector('#door-'+prizedDoor).classList.add('has-prize');
+    console.log('PRIZE IS AT DOOR ' + prizedDoor);
+    document.querySelector('#door-' + prizedDoor).classList.add('has-prize');
 }
 
 start();
