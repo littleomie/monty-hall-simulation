@@ -1,4 +1,4 @@
-const DELAY = 5;
+const DELAY = 3;
 const getRandom = max => Math.floor(Math.random() * Math.floor(max));
 const btnSimulate = document.querySelector('#btnSimulate');
 const btnReset = document.querySelector('#btnReset');
