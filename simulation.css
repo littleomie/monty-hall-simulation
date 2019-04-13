@@ -14,6 +14,7 @@
 
 .form-group {
     display: flex;
+    margin-top: 10px;
 }
 
 .form-group>label {
@@ -59,15 +60,28 @@ button {
 }
 
 #chart {
-    padding: 5px 10px;
-    /* border: 1px solid black; */
-    /* min-height: 500px; */
+    padding: 5px 0;
+    position: relative;
+}
+
+#mean-finder {
+    height: 100%;
+    width: 1px;
+    background-color: red;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transition: left 300ms;
 }
 
 .bar {
     display: flex;
-    height: 200px;
+    height: auto;
+    margin: 1px 0;
+    transition: width 100ms;
 }
+
 
 .bar-bar {
     background-color: white;
@@ -76,20 +90,19 @@ button {
 
 .bar-value {
     display: block;
-    /* height: 100%; */
     width: 0;
     text-align: center;
-    line-height: 200px;
+    line-height: 30px;
     overflow: hidden;
     transition: width 300ms;
     white-space: nowrap;
 }
 
-#bar-win {
+.bar-win {
     background-color: lime;
 }
 
-#bar-lose {
+.bar-lose {
     background-color: tomato;
 }
 

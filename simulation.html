@@ -21,8 +21,13 @@
         </label>
 
         <div class="form-group">
-            <label for="numAttempts">How many tries?</label>
-            <input type="number" id="txtNumAttempts" min="1" max="1000000" value="100" />
+            <label for="numAttempts">How many trials?</label>
+            <input type="number" id="txtNumAttempts" min="1" max="1000000" value="10" />
+        </div>
+
+        <div class="form-group">
+            <label for="txtNumTimes">How many times?</label>
+            <input type="number" id="txtNumTimes" min="1" max="100" value="15" data-value="15"/>
         </div>
 
         <div class="controls">
@@ -32,13 +37,16 @@
 
         <hr>
 
-        <div id="chart">
-            <p>Number of attempts: <span id="num-attempts">0</span></p>
+        <!-- <p>Number of attempts: <span id="num-attempts">0</span></p> -->
 
-            <div class="bar">
+        <div id="chart">
+            <div id="mean-finder"></div>
+            
+
+            <!-- <div class="bar">
                 <div id="bar-win" class="bar-value">WIN</div>
                 <div id="bar-lose" class="bar-value">LOSE</div>
-            </div>
+            </div> -->
 
             <!-- <div class="bar">
                 <div class="bar-bar">
