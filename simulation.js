@@ -18,7 +18,10 @@ txtNumTimes.addEventListener('change', () => {
 
 btnSimulate.addEventListener('click', () => {
     count = 0;
-    this.disabled = true;
+    cbSwitch.disabled = true;
+    txtNumAttempts.disabled = true;
+    txtNumTimes.disabled = true;
+    btnSimulate.disabled = true;
     btnReset.disabled = true;
     runSimulation = true;
 
@@ -50,13 +53,6 @@ function run(instance, barWin, barLose, scores) {
     console.log(barWin, barLose)
     let isSwitch = cbSwitch.checked;
     let numAttempts = parseInt(txtNumAttempts.value);
-    let maxAttempts = numAttempts;
-    
-    var win = 0;
-    var lose = 0;
-    var count = 0;
-
-    console.log(numAttempts)
     
     let interval = setInterval(() => {
         console.log('numAttempts', numAttempts)
@@ -75,9 +71,14 @@ function run(instance, barWin, barLose, scores) {
             txtNumTimes.value = numTimes - 1;
             
             if (numTimes - 1 > 0) {
+                btnSimulate.disabled = false;
                 btnSimulate.click();
             } else {
                 txtNumTimes.value = txtNumTimes.dataset.value;
+                btnSimulate.disabled = false;
+                cbSwitch.disabled = false;
+                txtNumAttempts.disabled = false;
+                txtNumTimes.disabled = false;
                 console.log('DONE');
             }
         };
@@ -85,9 +86,6 @@ function run(instance, barWin, barLose, scores) {
 }
 
 function simulate(isSwitch, barWin, barLose, scores) {
-    console.log(scores)
-
-    console.log('Simulating ...');
     count++;
     let prize = getRandom(3);
     let pick = getRandom(3);
@@ -114,8 +112,6 @@ function simulate(isSwitch, barWin, barLose, scores) {
             updateLose(scores, barLose);
         }
     }
-
-    // labelNumAttempts.innerText = count;
 }
 
 function getAverage() {
@@ -144,11 +140,4 @@ function updateLose(scores, barLose) {
 
 function reset() {
     window.location.reload();
-    // btnSimulate.disabled = false;
-    // barWin.style.width = '0';
-    // barLose.style.width = '0';
-    // labelNumAttempts.innerText = 0;
-    // win = 0;
-    // lose = 0;
-    // count = 0;
 }
